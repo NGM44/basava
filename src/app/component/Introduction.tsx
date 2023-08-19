@@ -70,7 +70,7 @@ const stats = [
                 </h1>
                 <div className="max-w-xl text-gray-500">
                  {
-                  basavaEnglishIntro.map(element => <p className="mt-6">{element}</p>)
+                  basavaEnglishIntro.map((element,index) => <p key={index} className="mt-6">{element}</p>)
                  }
                 </div>
               </div>

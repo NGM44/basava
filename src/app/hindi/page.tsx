@@ -65,7 +65,7 @@ export default function Home() {
                 </h1>
                 <div className="max-w-xl text-gray-500">
                  {
-                  basavaHindiIntro.map(element => <p className="mt-6">{element}</p>)
+                  basavaHindiIntro.map((element,index) => <p key={index} className="mt-6">{element}</p>)
                  }
                 </div>
               </div>
