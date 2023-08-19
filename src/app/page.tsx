@@ -1,6 +1,10 @@
 import { Metadata } from "next";
 import { basavaEnglishIntro } from "./component/content";
 import Banner from "./component/Banner";
+import Vachanas from "./component/Vachanas";
+import { vachana } from "./vachana";
+import { englishVachana } from "./englishVachana";
+import Link from "next/link";
 
 const stats = [
   { label: "Born", value: "1131 CE" },
@@ -50,6 +54,15 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
+      <Banner />
+      <div className="py-2">
+        <Link className="text-slate-500 px-8" href={"/kannada"}>
+          Kannada
+        </Link>
+        <Link className="text-white  px-8 under" href={"/"}>
+          English
+        </Link>
+      </div>
       <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
         <div className="bg-inherit py-12 sm:py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -61,7 +74,7 @@ export default function Home() {
                     src="https://www.jatinverma.org/uploads/2021_05/913.png"
                     alt=""
                   />
-                  <div className="absolute inset-0 bg-gray-900 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-gray-700 mix-blend-multiply" />
                   <div
                     className="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl"
                     aria-hidden="true"
@@ -101,20 +114,30 @@ export default function Home() {
               </div>
               <div>
                 <div className="text-base leading-7 text-gray-700 lg:max-w-lg text-balance">
-                  <p className="text-base font-semibold leading-7 text-indigo-600">
+                  <h1 className="text-base font-semibold leading-7 text-indigo-600">
                     Vishwaguru Basavana
-                  </p>
+                  </h1>
                   <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-400 sm:text-4xl">
                     WORK IS WORSHIP
                   </h1>
                   <div className="max-w-xl text-gray-500">
-                    {basavaEnglishIntro.map((element,index) => (
-                      <p key={index} className="mt-6">{element}</p>
+                    {basavaEnglishIntro.map((element, index) => (
+                      <p key={index} className="mt-6">
+                        {element}
+                      </p>
                     ))}
                   </div>
                 </div>
               </div>
             </div>
+            <h1 className="-mb-8 mt-8 text-3xl font-bold tracking-tight text-gray-400 sm:text-4xl">
+              Vachana
+            </h1>
+            <dl className="mt-10 flex flex-wrap gap-8 border-t border-gray-800 pt-10">
+              {englishVachana.map((element, index) => (
+                <Vachanas key={index} vachana={element} index={index} />
+              ))}
+            </dl>
           </div>
         </div>
       </div>

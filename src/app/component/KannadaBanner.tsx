@@ -1,4 +1,4 @@
-export default function Banner() {
+export default function KannadaBanner() {
   return (
     <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
       <div
@@ -31,14 +31,14 @@ export default function Banner() {
           <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
             <circle cx={1} cy={1} r={1} />
           </svg>
-          Join me to spread the thoughts of basava by giving new idea for this site.
+          ಹೊಸ ಕಲ್ಪನೆಯನ್ನು ನೀಡುವ ಮೂಲಕ ಬಸವ ಚಿಂತನೆಗಳನ್ನು ಹರಡಲು ನನ್ನೊಂದಿಗೆ ಸೇರಿ.
           
         </p>
         <a
           href = "mailto: basavabhakt@gmail.com"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
-          Mail Me <span aria-hidden="true">&rarr;</span> basavabhakt@gmail.com
+          ಮೇಲ್ ಮಾಡಿ <span aria-hidden="true">&rarr;</span> basavabhakt@gmail.com
         </a>
       </div>
       <div className="flex flex-1 justify-end">
