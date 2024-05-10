@@ -2,6 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Banner from './component/Banner'
+import Script from 'next/script';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -51,7 +53,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-     
+     <Script
+        strategy='lazyOnload'
+        src={`https://www.googletagmanager.com/gtag/js?id=G-W39MWYHRT9`}
+      />
+
+      <Script id='' strategy='lazyOnload'>
+        {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-W39MWYHRT9', {
+              page_path: window.location.pathname,
+              });
+          `}
+      </Script>
       <body className={inter.className}>
         {/* <Banner /> */}
         {children}
